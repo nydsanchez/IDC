@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Mulish:wght@300;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #042e54;
+  font-family: "Mulish", sans-serif;
+}
+/*dividir en 2 la pantalla inicio*/
+.login {
+  display: grid;
+  margin-top: 50px;
+  margin-right: 50px;
+  gap: 20px;
+}
+
+/*FORMULARIO*/
+#login_form {
+  padding: 20px;
+  box-shadow: 0px 0px 20px black;
+}
+#login_form > h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Lugrasimo", cursive;
+}
+
+#login_form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+#login_form > form > input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 0, 68);
+}
+
+#login_form > form > button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid gray;
+}
+
+#login_form > form > button:hover {
+  cursor: pointer;
+  background-color: #042e54;
+  color: white;
+}
+/*IMAGEN INICIO*/
+
+#img_inicio {
+  display: flex;
+  justify-content: center;
+}
+/*BREAKPOINT*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}

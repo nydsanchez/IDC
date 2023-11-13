@@ -1,4 +1,4 @@
-export default (data) => {
+export default function data(data) {
   let errors = {};
 
   if (!data.email.includes("@")) errors.e1 = "Your username must be an email";
@@ -13,4 +13,4 @@ export default (data) => {
     errors.p2 = "Your the password must be between 6 and 10 characters long.";
 
   return errors;
-};
+}
