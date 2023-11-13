@@ -1,4 +1,5 @@
-import Button from "./Button";
+import Button from "../Button/Button";
+import "../../assets/style/otro.css";
 const Miembro = ({ miembro }) => {
   return (
     <li>

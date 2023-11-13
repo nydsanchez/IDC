@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
-import Menu from "./component/Menu";
-import Form from "./component/Form";
-import Dashboard from "./component/Dashboard";
-import Footer from "./component/Footer";
+import Menu from "./component/MenuLateral/Menu";
+import Form from "./component/Forms/Form";
+import Dashboard from "./component/Dashboard/Dashboard";
+import Footer from "./component/Footer/Footer";
 import Title from "./component/Title";
+import Iglesia from "./component/Forms/Iglesia";
+import General from "./component/PageBlank/General";
+import Miembros from "./component/Cards/Miembros";
+import "../src/assets/style/form.css";
 
 const membrecia = [
   {
@@ -57,6 +61,8 @@ const PASSWORD = "asd123";
 
 const App = () => {
   const [access, setAccess] = useState(false);
+  const [menu, setMenu] = useState("");
+
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -71,11 +77,41 @@ const App = () => {
     !access && navigate("/");
   }, [access, navigate]);
 
+  function handleMenu(e) {
+    setMenu(e);
+    switch (e) {
+      case "iglesia":
+        navigate("/iglesia");
+        break;
+      case "miembros":
+        navigate("/miembros");
+        break;
+      case "grupos":
+        navigate("/grupos");
+        break;
+      case "eventos":
+        navigate("/eventos");
+        break;
+      case "visitas":
+        navigate("/visitas");
+        break;
+      case "ingreso":
+        navigate("/ingresos");
+        break;
+      case "egreso":
+        navigate("/egresos");
+        break;
+      default:
+        navigate("/home");
+        break;
+    }
+  }
+
   return (
-    <div className="app">
+    <div className={pathname === "/" ? "" : "app"}>
       {pathname !== "/" && (
         <>
-          <Menu />
+          <Menu menu={menu} onClick={handleMenu} />
           <Title>Sistema de Administración de Membresía</Title>
           <Footer />
         </>
@@ -83,6 +119,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Form login={login} />} />
         <Route path="/home" element={<Dashboard membrecia={membrecia} />} />
+        <Route path="/iglesia" element={<Iglesia />} />
+        <Route path="/miembros" element={<Miembros membrecia={membrecia} />} />
+        <Route path="/grupos" element={<General>Grupos</General>} />
+        <Route path="/visitas" element={<General>Visitacion</General>} />
+        <Route path="/eventos" element={<General>Eventos</General>} />
+        <Route path="/ingresos" element={<General>Ingreso</General>} />
+        <Route path="/egresos" element={<General>Egreso </General>} />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import DataDashboard from "./DataDashboard";
-import SubTitle2 from "./SubTitle2";
+import SubTitle2 from "../SubTitle2";
 
 const Dashboard = ({ membrecia }) => {
   const allMember = membrecia.length;

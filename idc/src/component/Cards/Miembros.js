@@ -1,13 +1,14 @@
 import Miembro from "./Miembro";
+import "../../assets/style/otro.css";
 const Miembros = ({ membrecia }) => {
   return (
-    <div className="container">
-      <ul>
+    <main>
+      <ul className="ulMiembros">
         {membrecia.map((miembro, index) => (
           <Miembro key={index} miembro={miembro} />
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 export default Miembros;

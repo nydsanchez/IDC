@@ -5,24 +5,18 @@
   --color-dark: #ff922b;
 }
 
-body {
-  height: auto;
-  color: #495057;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Mulish:wght@300;500&display=swap");
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #042e54;
+  font-family: "Mulish", sans-serif;
 }
 
 .app {
@@ -56,6 +50,8 @@ header h1 {
 .app > nav {
   grid-area: nav;
   border-right: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
 }
 .app > section {
   grid-area: title;
@@ -65,15 +61,6 @@ header h1 {
 .app > aside {
   grid-area: form;
   background-color: #ffffff;
-}
-
-h2 {
-  padding-top: 2rem;
-  text-align: center;
-  line-height: 5px;
-  width: 100%;
-  font-size: large;
-  color: var(--color-medium);
 }
 
 h3 {
@@ -105,21 +92,16 @@ aside {
   margin-top: 5rem;
 }
 
-nav ul {
-  list-style: none;
-}
-
-nav li {
-  text-decoration: none;
-  display: block;
+nav button {
+  border: none;
   border-bottom: 1px solid #222;
-  padding-bottom: 5px;
+  background-color: white;
   color: #042e54;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: start;
 }
 
-nav li:hover {
+nav button:hover {
   background-color: #042e54;
   color: #fff;
 }
@@ -186,4 +168,50 @@ aside ul li {
 .sidebar > .button {
   float: right;
   margin-right: 1.2rem;
+}
+
+/*FORMULARIO*/
+#formChurchInfo {
+  width: 50%;
+}
+
+#formChurchInfo > h4 {
+  text-align: center;
+  margin: 10px;
+}
+#infoIg > input {
+  height: 35px;
+  padding: 8px;
+}
+
+#infoIg > select {
+  height: 35px;
+  padding: 8px;
+}
+#infoIg {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px;
+}
+
+/*IGLESIA*/
+#subMainIglesia {
+  display: flex;
+  flex-direction: column;
+}
+
+#subMainIglesia > a {
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #053f77;
+}
+
+#subMainIglesia > a:hover {
+  background-color: #042e54;
+  color: #fff;
+  border-radius: 25px;
 }

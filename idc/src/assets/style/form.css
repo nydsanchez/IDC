@@ -17,12 +17,14 @@ body {
   margin-top: 50px;
   margin-right: 50px;
   gap: 20px;
+  grid-template-columns: 1fr 1fr;
 }
 
 /*FORMULARIO*/
 #login_form {
   padding: 20px;
   box-shadow: 0px 0px 20px black;
+  grid-column: 2;
 }
 #login_form > h2 {
   text-align: center;
@@ -58,6 +60,7 @@ body {
 #img_inicio {
   display: flex;
   justify-content: center;
+  grid-column: 1;
 }
 /*BREAKPOINT*/
 
