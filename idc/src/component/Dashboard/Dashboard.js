@@ -23,18 +23,14 @@ const Dashboard = ({ membrecia }) => {
     { desc: "Miembros descarriados", cantidad: sumaDescarriados },
   ];
   return (
-    <>
-      <section>
-        <SubTitle2>DASHBOARD</SubTitle2>
-      </section>
-      <main>
-        <ul className=".dashboard">
-          {summary.map((elemento, index) => (
-            <DataDashboard key={index} elemento={elemento} />
-          ))}
-        </ul>
-      </main>
-    </>
+    <main>
+      <SubTitle2>DASHBOARD</SubTitle2>
+      <ul className="dashboard">
+        {summary.map((elemento, index) => (
+          <DataDashboard key={index} elemento={elemento} />
+        ))}
+      </ul>
+    </main>
   );
 };
 export default Dashboard;

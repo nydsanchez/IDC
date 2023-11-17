@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.jpg";
 const Title = ({ children }) => {
   return (
     <header>
-      <img src={logo} width="168px" height="100px" alt="logo" />
+      <img src={logo} alt="logo" />
       <h1>{children}</h1>
     </header>
   );

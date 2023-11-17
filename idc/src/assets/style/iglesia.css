@@ -1,0 +1,7 @@
+.iglesia-form {
+  display: grid;
+  margin-top: 50px;
+  margin-right: 10px;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}

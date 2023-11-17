@@ -4,12 +4,13 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Menu from "./component/MenuLateral/Menu";
 import Form from "./component/Forms/Form";
 import Dashboard from "./component/Dashboard/Dashboard";
-import Footer from "./component/Footer/Footer";
+
 import Title from "./component/Title";
 import Iglesia from "./component/Forms/Iglesia";
 import General from "./component/PageBlank/General";
 import Miembros from "./component/Cards/Miembros";
 import "../src/assets/style/form.css";
+import FormMiembros from "./component/Forms/FormMiembros";
 
 const membrecia = [
   {
@@ -70,6 +71,10 @@ const App = () => {
     if (userData.psd === PASSWORD && userData.email === EMAIL) {
       setAccess(true);
       navigate("/home");
+    } else {
+      alert(
+        "El usuario o contraseña que introdujo no es correcta, por favor introduzca su usuario y contrasena"
+      );
     }
   };
 
@@ -101,6 +106,7 @@ const App = () => {
       case "egreso":
         navigate("/egresos");
         break;
+
       default:
         navigate("/home");
         break;
@@ -113,7 +119,6 @@ const App = () => {
         <>
           <Menu menu={menu} onClick={handleMenu} />
           <Title>Sistema de Administración de Membresía</Title>
-          <Footer />
         </>
       )}
       <Routes>
@@ -122,9 +127,9 @@ const App = () => {
         <Route path="/iglesia" element={<Iglesia />} />
         <Route path="/miembros" element={<Miembros membrecia={membrecia} />} />
         <Route path="/grupos" element={<General>Grupos</General>} />
-        <Route path="/visitas" element={<General>Visitacion</General>} />
+        <Route path="/visitas" element={<General>Visitación </General>} />
         <Route path="/eventos" element={<General>Eventos</General>} />
-        <Route path="/ingresos" element={<General>Ingreso</General>} />
+        <Route path="/ingresos" element={<FormMiembros />} />
         <Route path="/egresos" element={<General>Egreso </General>} />
       </Routes>
     </div>

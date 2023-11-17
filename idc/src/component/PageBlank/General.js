@@ -1,4 +1,10 @@
 const General = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <main>
+      <div>
+        <p style={{ textWrap: "wrap", overflow: "hidden" }}>{children}</p>
+      </div>
+    </main>
+  );
 };
 export default General;

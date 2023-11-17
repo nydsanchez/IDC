@@ -1,17 +1,18 @@
+import "../../assets/style/iglesia.css";
 const Iglesia = () => {
   return (
-    <main>
-      <section id="subMainIglesia">
-        <a class="menuTop" id="m1" href="#">
+    <main className="iglesia-form">
+      <nav>
+        <a id="m1" href="#">
           Información General
         </a>
-        <a class="menuTop" id="m3" href="#">
+        <a id="m3" href="#">
           Ministerios
         </a>
-        <a class="menuTop" id="m3" href="#">
+        <a id="m3" href="#">
           Organización biblica
         </a>
-      </section>
+      </nav>
       <section id="formChurchInfo">
         <h4>Información General de la congregación</h4>
         <form id="infoIg">
